@@ -10,6 +10,12 @@ flutter build apk --target-platform android-arm64
 ```
 flutter build windows
 ```
+- iOS/MacOS
+
+Not supported
+- Linux
+
+Not supported
 
 ## Features
 - Generates particle paintings from images
