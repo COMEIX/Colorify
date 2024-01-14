@@ -4,12 +4,12 @@ Toolkit for Minecraft BE
 ## Usage
 - Android
 
-Download release `app-release.apk`, install and grant its io permission
+Download release `app-release.apk`, install and grant its io permission\\
 Files will be generated under `/storage/emulated/0/Documents/`
 
 - Windows
 
-Download release `Windows-Release.zip` and unzip it to your preferred location
+Download release `Windows-Release.zip` and unzip it to your preferred location\\
 Open `colorify.exe`, files will be generated under `C:\Users\your_name\Documents\colorify`
 
 ## Build
