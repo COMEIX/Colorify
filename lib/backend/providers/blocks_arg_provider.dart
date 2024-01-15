@@ -16,14 +16,14 @@ class ToBlocksArgProvider with ChangeNotifier {
 
   AllowSand _allowSand = AllowSand.allow;
   AllowGlass _allowGlass = AllowGlass.allow;
-  UseStructure _useStructure = UseStructure.notUse;
+  UseStructure _useStruct = UseStructure.notUse;
   Pack _pack = Pack.n;
 
   int get generationPlane => _generationPlane;
   TextEditingController get samplingRate => _samplingRate;
-  AllowSand get allowSand => _allowSand;
-  AllowGlass get allowGlass => _allowGlass;
-  UseStructure get useStructure => _useStructure;
+  bool get allowSand => _allowSand == AllowSand.allow;
+  bool get allowGlass => _allowGlass == AllowGlass.allow;
+  bool get useStruct => _useStruct == UseStructure.use;
   Pack get pack => _pack;
   TextEditingController get packName => _packName;
   TextEditingController get packDescription => _packDescription;
@@ -33,23 +33,23 @@ class ToBlocksArgProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void updateAllowSand(AllowSand v) {
-    _allowSand = v;
+  void updateAllowSand(bool v) {
+    _allowSand = v ? AllowSand.allow : AllowSand.notAllow;
     notifyListeners();
   }
 
-  void updateAllowGlass(AllowGlass v) {
-    _allowGlass = v;
+  void updateAllowGlass(bool v) {
+    _allowGlass = v ? AllowGlass.allow : AllowGlass.notAllow;
     notifyListeners();
   }
 
-  void updateUseStructure(UseStructure v) {
-    _useStructure = v;
+  void updateUseStruct(bool v) {
+    _useStruct = v ? UseStructure.use : UseStructure.notUse;
     notifyListeners();
   }
 
-  void updatePack(Pack v) {
-    _pack = v;
+  void updatePack(bool v) {
+    _pack = v ? Pack.y : Pack.n;
     notifyListeners();
   }
 }

@@ -1,18 +1,16 @@
 import 'dart:io';
-import 'package:colorify/backend/io/index.dart';
-import 'package:colorify/backend/providers/function_provider.dart';
-import 'package:colorify/components/snackbar.dart';
-import 'package:colorify/pages/acknowledgements.dart';
-import 'package:colorify/pages/constructing.dart';
-import 'package:colorify/pages/drawer.dart';
-import 'package:colorify/pages/to_blocks.dart';
-import 'package:colorify/pages/to_particles.dart';
-import 'package:provider/provider.dart';
-
-import '../const.dart';
-import 'package:flutter/material.dart';
-import 'package:window_manager/window_manager.dart';
 import 'package:intl/intl.dart';
+import 'package:colorify/const.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:colorify/pages/block.dart';
+import 'package:colorify/pages/drawer.dart';
+import 'package:colorify/pages/particle.dart';
+import 'package:colorify/backend/io/index.dart';
+import 'package:colorify/pages/constructing.dart';
+import 'package:window_manager/window_manager.dart';
+import 'package:colorify/pages/acknowledgements.dart';
+import 'package:colorify/backend/providers/function_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

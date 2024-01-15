@@ -31,7 +31,7 @@ class ParticleGenerator extends Generator {
     final String ph = _args.particleHeight.text;
     final String pti = _args.particleTypeId.text;
     final String tc = _args.targetColor.text;
-    final bool rt = _args.rotate == Rotate.y;
+    final bool rt = _args.doRotate == Rotate.y;
     rot = rt;
     final String rx = _args.rotX.text;
     final String ry = _args.rotY.text;

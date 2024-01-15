@@ -43,9 +43,9 @@ void generate(BuildContext context) async {
 
   final genParticle = fp.selectedFunction == Functions.toParticles ? true : false;
   final bool arch = genParticle
-      ? pp.pack == particle_args_provider.Pack.y
+      ? pp.doPack == particle_args_provider.Pack.y
       : bp.pack == block_args_provider.Pack.y;
-  final bool useStruct = bp.useStructure == block_args_provider.UseStructure.use;
+  final bool useStruct = bp.useStruct == block_args_provider.UseStructure.use;
   final generator = genParticle ? ParticleGenerator(pp) : BlockGenerator(bp);
   final generatorType = genParticle ? GeneratorType.Particle : GeneratorType.Block;
   final pkgName = genParticle ? pp.packName : bp.packName;

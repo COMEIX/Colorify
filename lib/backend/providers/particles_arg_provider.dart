@@ -24,11 +24,11 @@ class ToParticlesArgProvider with ChangeNotifier {
   TextEditingController get particleTypeId => _particleTypeId;
   TextEditingController get targetColor => _targetColor;
   int get generationPlane => _generationPlane;
-  Rotate get rotate => _rotate;
+  bool get doRotate => _rotate == Rotate.y;
   TextEditingController get rotX => _rotX;
   TextEditingController get rotY => _rotY;
   TextEditingController get rotZ => _rotZ;
-  Pack get pack => _pack;
+  bool get doPack => _pack == Pack.y;
   TextEditingController get packName => _packName;
   TextEditingController get packDescription => _packDescription;
 
@@ -37,13 +37,13 @@ class ToParticlesArgProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void updateRotate(Rotate v) {
-    _rotate = v;
+  void updateRotate(bool v) {
+    _rotate = v ? Rotate.y : Rotate.n;
     notifyListeners();
   }
 
-  void updatePack(Pack v) {
-    _pack = v;
+  void updatePack(bool v) {
+    _pack = v ? Pack.y : Pack.n;
     notifyListeners();
   }
 }

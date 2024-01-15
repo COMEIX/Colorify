@@ -9,7 +9,6 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:colorify/backend/providers/function_provider.dart';
 import 'package:colorify/backend/providers/blocks_arg_provider.dart';
-import 'package:colorify/backend/providers/loading_state_provider.dart';
 import 'package:colorify/backend/providers/particles_arg_provider.dart';
 
 void main() async {
@@ -34,7 +33,7 @@ void main() async {
     await requestFilePermission();
   }
 
-  runApp(GlobalBoxManager(child: MyApp()));
+  runApp(GlobalBoxManager(child: const MyApp()));
 
   // * 调整窗口大小
   if (Platform.isWindows) {
@@ -50,6 +49,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     // * 沉浸式状态栏
@@ -72,7 +72,6 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider<FunctionProvider>(create: (_) => FunctionProvider()),
           ChangeNotifierProvider<ToBlocksArgProvider>(create: (_) => ToBlocksArgProvider()),
           ChangeNotifierProvider<ToParticlesArgProvider>(create: (_) => ToParticlesArgProvider()),
-          ChangeNotifierProvider<LoadingStateProvider>(create: (_) => LoadingStateProvider()),
         ],
         child: const HomePage(),
       ),

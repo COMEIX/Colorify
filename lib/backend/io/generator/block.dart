@@ -30,7 +30,7 @@ class BlockGenerator extends Generator {
     final int _gp = _args.generationPlane;
     final bool _als = _args.allowSand == AllowSand.allow;
     final bool _alg = _args.allowGlass == AllowGlass.allow;
-    final bool _us = _args.useStructure == UseStructure.use;
+    final bool _us = _args.useStruct == UseStructure.use;
 
     if (!(_sr > 0 && _sr <= 1)) {
       throw Exception("Invalid sampling rate");

@@ -1,6 +1,5 @@
 import 'package:colorify/backend/providers/function_provider.dart';
 import 'package:colorify/components/drawer_list_item.dart';
-import 'package:colorify/components/snackbar.dart';
 import 'package:colorify/const.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
