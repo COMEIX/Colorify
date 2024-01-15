@@ -17,8 +17,11 @@ void main() async {
     WidgetsFlutterBinding.ensureInitialized();
     WindowManager w = WindowManager.instance;
     await w.ensureInitialized();
-    WindowOptions windowOptions =
-        WindowOptions(size: await w.getSize(), center: true, titleBarStyle: TitleBarStyle.hidden);
+    WindowOptions windowOptions = WindowOptions(
+      size: await w.getSize(),
+      center: true,
+      titleBarStyle: TitleBarStyle.hidden,
+    );
     w.waitUntilReadyToShow(windowOptions, () async {
       await w.setBackgroundColor(Colors.transparent);
       await w.show();

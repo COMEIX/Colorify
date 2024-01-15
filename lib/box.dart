@@ -14,18 +14,11 @@ class GlobalBoxManager extends StatelessWidget {
       return SizedBox(
         width: double.infinity,
         height: double.infinity,
-        // android伪全屏，加入边距
-        // padding: Platform.isAndroid
-        //     ? const EdgeInsets.symmetric(horizontal: 374, vertical: 173)
-        //     : EdgeInsets.zero,
         child: Container(
           clipBehavior: Clip.antiAliasWithSaveLayer,
           margin: const EdgeInsets.all(10),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(8)),
-            // boxShadow: [
-            //   BoxShadow(color: Color(0x33000000), blurRadius: 8),
-            // ],
           ),
           child: child,
         ),
