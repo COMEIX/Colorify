@@ -20,6 +20,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Fuck if-else
+  // I'll remove this piece of shit code next refactored version
   Widget _getBody(Functions func) {
     if (func == Functions.toParticles) {
       return const ToParticles();
@@ -63,6 +65,7 @@ class _HomePageState extends State<HomePage> {
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // This fucking repeatedly appearing "PingFang SC" would be removed as well
                 const Text(
                   "Today",
                   style: TextStyle(
