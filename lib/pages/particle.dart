@@ -4,6 +4,13 @@ import 'package:colorify/components/arg_str_item.dart';
 import 'package:colorify/components/arg_switch_item.dart';
 import 'package:colorify/const.dart';
 import 'package:colorify/components/info_page.dart';
+import 'package:colorify/pages/info/generation_plane.dart';
+import 'package:colorify/pages/info/pack.dart';
+import 'package:colorify/pages/info/particle_height.dart';
+import 'package:colorify/pages/info/particle_typeid.dart';
+import 'package:colorify/pages/info/rotation.dart';
+import 'package:colorify/pages/info/sampling_rate.dart';
+import 'package:colorify/pages/info/target_color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -42,45 +49,29 @@ class _ToParticlesState extends State<ToParticles> {
               StrArgItem(
                 title: '采样率',
                 hintText: '(0, 1]',
-                infoPage: const InfoPage(
-                  title: '采样率',
-                  content: [],
-                  defaultValue: '',
-                ),
+                infoPage: SamplingRateInfoPage(),
                 controller: args.samplingRate,
               ),
               const SizedBox(height: 20),
               StrArgItem(
                 title: '粒子画高度',
                 hintText: '5.0',
-                infoPage: const InfoPage(
-                  title: '粒子画高度',
-                  content: [],
-                  defaultValue: '',
-                ),
+                infoPage: ParticleHeightInfoPage(),
                 controller: args.particleHeight,
               ),
               const SizedBox(height: 20),
               StrArgItem(
                 title: '粒子ID',
                 hintText: 'namespace:identifier',
-                infoPage: const InfoPage(
-                  title: '粒子ID',
-                  content: [],
-                  defaultValue: '',
-                ),
-                controller: args.samplingRate,
+                infoPage: ParticleTypeIdInfoPage(),
+                controller: args.particleTypeId,
               ),
               const SizedBox(height: 20),
               StrArgItem(
                 title: '目标颜色',
                 hintText: '#000000',
-                infoPage: const InfoPage(
-                  title: '目标颜色',
-                  content: [],
-                  defaultValue: '',
-                ),
-                controller: args.samplingRate,
+                infoPage: TargetColorInfoPage(),
+                controller: args.targetColor,
               ),
               const SizedBox(height: 20),
               ListArgItem(
@@ -88,22 +79,14 @@ class _ToParticlesState extends State<ToParticles> {
                 items: const ['xOy', 'yOz', 'xOz'],
                 initialSelection: args.generationPlane,
                 onSelected: (v) => args.updateGenerationPlane(v!),
-                infoPage: const InfoPage(
-                  content: [],
-                  title: '',
-                  defaultValue: '',
-                ),
+                infoPage: GenerationPlaneInfoPage(),
               ),
               const SizedBox(
                 height: 20,
               ),
               SwitchArgItem(
                 title: '旋转拟合',
-                infoPage: const InfoPage(
-                  content: [],
-                  title: '',
-                  defaultValue: '',
-                ),
+                infoPage: FittingRotationInfoPage(),
                 value: args.doRotate,
                 onChanged: (v) => args.updateRotate(v),
               ),
@@ -154,11 +137,7 @@ class _ToParticlesState extends State<ToParticles> {
               ),
               SwitchArgItem(
                 title: '打包',
-                infoPage: const InfoPage(
-                  content: [],
-                  title: '',
-                  defaultValue: '',
-                ),
+                infoPage: PackInfoPage(),
                 value: args.doPack,
                 onChanged: (v) => args.updatePack(v),
               ),

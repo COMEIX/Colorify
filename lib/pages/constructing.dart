@@ -47,6 +47,23 @@ class Constructing extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
+            SizedBox(height: 40),
+            Text(
+              '也欢迎参与到开发中:',
+              style: TextStyle(
+                fontFamily: 'PingFang SC',
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+            Text(
+              'https://github.com/COMEIX/Colorify.git',
+              style: TextStyle(
+                fontFamily: 'PingFang SC',
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
           ],
         ),
       ),

@@ -1,4 +1,8 @@
 import 'package:colorify/const.dart';
+import 'package:colorify/pages/info/generation_plane.dart';
+import 'package:colorify/pages/info/pack.dart';
+import 'package:colorify/pages/info/sampling_rate.dart';
+import 'package:colorify/pages/info/use_structure.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,11 +39,7 @@ class _ToBlocksState extends State<ToBlocks> {
               StrArgItem(
                 title: '采样率',
                 hintText: '(0, 1]',
-                infoPage: const InfoPage(
-                  title: '采样率',
-                  content: [],
-                  defaultValue: '',
-                ),
+                infoPage: SamplingRateInfoPage(),
                 controller: args.samplingRate,
               ),
               const SizedBox(height: 20),
@@ -48,11 +48,7 @@ class _ToBlocksState extends State<ToBlocks> {
                 items: const ['xOy', 'yOz', 'xOz'],
                 initialSelection: args.generationPlane,
                 onSelected: (v) => args.updateGenerationPlane(v!),
-                infoPage: const InfoPage(
-                  content: [],
-                  title: '',
-                  defaultValue: '',
-                ),
+                infoPage: GenerationPlaneInfoPage(),
               ),
               const SizedBox(height: 20),
               SwitchArgItem(
@@ -81,22 +77,14 @@ class _ToBlocksState extends State<ToBlocks> {
               const SizedBox(height: 20),
               SwitchArgItem(
                 title: '使用结构文件',
-                infoPage: const InfoPage(
-                  content: [],
-                  title: '',
-                  defaultValue: '',
-                ),
+                infoPage: UseStructureInfoPage(),
                 value: args.useStruct,
                 onChanged: (v) => args.updateUseStruct(v),
               ),
               const SizedBox(height: 20),
               SwitchArgItem(
                 title: '打包',
-                infoPage: const InfoPage(
-                  content: [],
-                  title: '',
-                  defaultValue: '',
-                ),
+                infoPage: PackInfoPage(),
                 value: args.pack == Pack.y,
                 onChanged: (v) => args.updatePack(v),
               ),
