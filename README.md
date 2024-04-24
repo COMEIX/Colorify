@@ -22,6 +22,11 @@ Download release `Windows-Release.zip` and unzip it to your preferred location
 Open `colorify.exe`, files will be generated under `C:\Users\your_name\Documents\colorify`
 
 ## Build
+Clone project to your computer
+```
+git clone https://github.com/COMEIX/Colorify.git
+```
+
 Before building, you need to install project dependencies, try
 ```
 flutter pub get
