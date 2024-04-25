@@ -1,4 +1,4 @@
-import 'dart:io';
+
 import 'package:intl/intl.dart';
 import 'package:colorify/const.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,6 @@ import 'package:colorify/pages/drawer.dart';
 import 'package:colorify/pages/particle.dart';
 import 'package:colorify/backend/io/index.dart';
 import 'package:colorify/pages/constructing.dart';
-import 'package:window_manager/window_manager.dart';
 import 'package:colorify/pages/acknowledgements.dart';
 import 'package:colorify/backend/providers/function_provider.dart';
 
@@ -46,44 +45,39 @@ class _HomePageState extends State<HomePage> {
       key: scaffoldKey,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(57),
-        child: GestureDetector(
-          onPanStart: (details) {
-            if (Platform.isWindows) windowManager.startDragging();
-          },
-          child: AppBar(
-            backgroundColor: lightBackgroundColor,
-            elevation: 0,
-            leading: TextButton(
-              child: Icon(
-                Icons.dehaze,
-                color: lightIconColor,
+        child: AppBar(
+          backgroundColor: lightBackgroundColor,
+          elevation: 0,
+          leading: TextButton(
+            child: Icon(
+              Icons.dehaze,
+              color: lightIconColor,
+            ),
+            onPressed: () {
+              scaffoldKey.currentState?.openDrawer();
+            },
+          ),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // This fucking repeatedly appearing "PingFang SC" would be removed as well
+              const Text(
+                "Today",
+                style: TextStyle(
+                  fontFamily: "PingFang SC",
+                  fontSize: 14,
+                ),
               ),
-              onPressed: () {
-                scaffoldKey.currentState?.openDrawer();
-              },
-            ),
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // This fucking repeatedly appearing "PingFang SC" would be removed as well
-                const Text(
-                  "Today",
-                  style: TextStyle(
-                    fontFamily: "PingFang SC",
-                    fontSize: 14,
-                  ),
+              Text(
+                '${DateFormat("EEE", "en-US").format(now)}, ${DateFormat("MMM", "en-US").format(now)}, ${now.year}',
+                style: TextStyle(
+                  color: lightIconColor,
+                  fontFamily: "PingFang SC",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
-                Text(
-                  '${DateFormat("EEE", "en-US").format(now)}, ${DateFormat("MMM", "en-US").format(now)}, ${now.year}',
-                  style: TextStyle(
-                    color: lightIconColor,
-                    fontFamily: "PingFang SC",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

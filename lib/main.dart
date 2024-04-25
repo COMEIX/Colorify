@@ -36,7 +36,18 @@ void main() async {
     await requestFilePermission();
   }
 
-  runApp(GlobalBoxManager(child: const MyApp()));
+  runApp(
+    GestureDetector(
+      onPanStart: (v) {
+        if (Platform.isWindows) {
+          windowManager.startDragging();
+        }
+      },
+      child: GlobalBoxManager(
+        child: const MyApp(),
+      ),
+    ),
+  );
 
   // * 调整窗口大小
   if (Platform.isWindows) {

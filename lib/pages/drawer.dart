@@ -87,19 +87,19 @@ class _MyDrawerState extends State<MyDrawer> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'v3.0.0',
+                    'v3.1.1',
                     style: TextStyle(
                       fontFamily: 'PingFang SC',
                     ),
                   ),
                   const Text(
-                    'Jan 2024',
+                    'Apr 2024',
                     style: TextStyle(
                       fontFamily: 'PingFang SC',
                     ),
                   ),
                   const Text(
-                    'COMEIX - 2245638853@qq.com',
+                    'COMEIX - 3695178121@qq.com',
                     style: TextStyle(
                       fontFamily: 'PingFang SC',
                     ),
